@@ -141,3 +141,5 @@ export async function bindPage() {
 
   detectPoseInRealTime(video, net);
 }
+
+bindPage()
