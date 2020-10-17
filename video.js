@@ -138,6 +138,33 @@ export async function bindPage() {
   }
   console.log(video)
   detectPoseInRealTime(video, guiState.net);
+
+  var imageElement = document.getElementById('test_image');
+
+  let poses = []
+  posenet.load().then(function(net) {
+    const pose = net.estimateSinglePose(imageElement, {
+      flipHorizontal: true
+    });
+    return pose;
+  }).then(function(pose){
+    poses.concat(pose)
+    console.log(pose);
+  })
+
+  poses.forEach(({score, keypoints}) => {
+      if (score >= minPoseConfidence) {
+        if (guiState.output.showPoints) {
+          drawKeypoints(keypoints, minPartConfidence, ctx);
+        }
+        if (guiState.output.showSkeleton) {
+          drawSkeleton(keypoints, minPartConfidence, ctx);
+        }
+        if (guiState.output.showBoundingBox) {
+          drawBoundingBox(keypoints, ctx);
+        }
+      }
+    });  
 }
 
 bindPage()
