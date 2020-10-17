@@ -1,17 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
 
-<script>
-	client_vid = null
-
-	function updateFile() {
-		client_vid = client_vid = document.getElementById("").value
-	}
-
-	function poseEstimate() {
-		document.getElementById("output_video").innerHTML = client_vid
-	}
-</script>
+<script src="index.js"></script>
 
 <form>
 	<label for="client_vid">Select a video:</label>
@@ -19,26 +9,6 @@
 	<button type="button" onclick="poseEstimate()">Submit</button>
 </form>
 
-<body>
-    <img id='person' src='images/person.jpg '/>
-</body>
-<!-- Place your code in the script tag below. You can also use an external .js file -->
-<script>
-	var flipHorizontal = false;
-
-	var imageElement = document.getElementById('person');
-
-	posenet.load().then(
-		function(net) {
-  			const pose = net.estimateSinglePose(
-  				imageElement, {
-    				flipHorizontal: true
-  				});
-  			return pose;
-		}).then(function(pose){
-  			console.log(pose);
-		})
-</script>
-
-
-<video id="output_video"></video>
+<video id="test_vid">
+	<source src='video/pushup_trimmed.mp4' type='video/mp4'>
+</video>
