@@ -77,6 +77,7 @@ function detectPoseInRealTime(video, net) {
       flipHorizontal: flipPoseHorizontal,
       decodingMethod: 'single-person'
     });
+    console.log(pose)
     poses = poses.concat(pose);
     minPoseConfidence = +guiState.singlePoseDetection.minPoseConfidence;
     minPartConfidence = +guiState.singlePoseDetection.minPartConfidence;
