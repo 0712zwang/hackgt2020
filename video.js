@@ -43,7 +43,7 @@ async function setupVideo() {
 
   return new Promise(
 		(resolve) => {
-  		video.onloadedmetadata = () => {
+  		video.onloadeddata = () => {
     			resolve(video);
   		};
 		});
