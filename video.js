@@ -142,7 +142,7 @@ export async function bindPage() {
     });
     return pose;
   }).then(function(pose){
-    poses.concat(pose)
+    poses.push(pose)
     console.log(pose);
   })
 
