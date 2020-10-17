@@ -147,6 +147,7 @@ export async function bindPage() {
   })
 
   poses.forEach(({score, keypoints}) => {
+      console.log("drawing", score, keypoints)
       if (score >= minPoseConfidence) {
         if (guiState.output.showPoints) {
           drawKeypoints(keypoints, minPartConfidence, ctx);
