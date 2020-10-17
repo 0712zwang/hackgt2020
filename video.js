@@ -144,7 +144,7 @@ export async function bindPage() {
   let poses = []
   posenet.load().then(function(net) {
     const pose = net.estimateSinglePose(imageElement, {
-      flipHorizontal: true
+      flipHorizontal: false
     });
     return pose;
   }).then(function(pose){
