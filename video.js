@@ -8,7 +8,7 @@ const defaultMobileNetMultiplier = 0.75;
 const defaultMobileNetStride = 16;
 const defaultMobileNetInputResolution = 500;
 
-const params = {
+const guiState = {
   	algorithm: 'single-pose',
   	input: {
     	architecture: 'MobileNetV1',
