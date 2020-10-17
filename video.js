@@ -136,7 +136,7 @@ export async function bindPage() {
     console.log('this browser does not support video capture, or this device does not have a camera')
   }
   console.log(video)
-  detectPoseInRealTime(video, net);
+  detectPoseInRealTime(video, guiState.net);
 }
 
 bindPage()
