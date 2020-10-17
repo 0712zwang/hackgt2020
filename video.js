@@ -1,4 +1,4 @@
-import {drawBoundingBox, drawKeypoints, drawSkeleton, isMobile} from './util'
+import {drawBoundingBox, drawKeypoints, drawSkeleton, isMobile} from './utils'
 
 const videoWidth = 600;
 const videoHeight = 500;
