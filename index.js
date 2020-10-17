@@ -7,7 +7,7 @@ function updateFile() {
 function poseEstimate() {
 	var flipHorizontal = false;
 
-	var imageElement = document.getElementById('test_vid');
+	var imageElement = document.getElementById('test_image');
 
 	posenet.load().then(
 		function(net) {
