@@ -126,6 +126,7 @@ export async function bindPage() {
     quantBytes: guiState.input.quantBytes
   });
 
+  console.log("net")
   console.log(guiState.net)
 
   let video;
