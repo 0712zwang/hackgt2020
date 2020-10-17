@@ -121,7 +121,7 @@ function detectPoseInRealTime(video, net) {
 
 export async function bindPage() {
   /*toggleLoadingUI(true);*/
-  const net = await posenet.load({
+  guiState.net = await posenet.load({
     architecture: guiState.input.architecture,
     outputStride: guiState.input.outputStride,
     inputResolution: guiState.input.inputResolution,
