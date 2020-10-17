@@ -1,4 +1,4 @@
-import {drawBoundingBox, drawKeypoints, drawSkeleton, isMobile} from './utils'
+import {drawBoundingBox, drawKeypoints, drawSkeleton, isMobile} from './utils.js'
 
 const videoWidth = 600;
 const videoHeight = 500;
@@ -118,7 +118,7 @@ function detectPoseInRealTime(video, net) {
 }
 
 export async function bindPage() {
-  toggleLoadingUI(true);
+  /*toggleLoadingUI(true);*/
   const net = await posenet.load({
     architecture: guiState.input.architecture,
     outputStride: guiState.input.outputStride,
