@@ -1,8 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
 
-
-<script type='module' src="video.js"></script>
 <script type='module' src="draw_img.js"></script>
 
 <script src='index.js'></script>
@@ -10,8 +8,7 @@
 <form>
 	<label for="client_vid">Select a video:</label>
 	<input type="file" accept="video/*" id="client_vid" name="client_vid" change="updateFile">
-	<button type="button" onclick="bindPage()">Submit</button>
-    <button type="button" onclick="drawOnImage()">Draw on Image</button>
+	<button type="button" >Submit</button>
 </form>
 
 <div id='main_1'>
@@ -23,5 +20,7 @@
 
 <div id='main_2'>
 	<img src="image/person.jpg" id="test_image">
-	<canvas id='output_2/>
+	<canvas id='output_2' />
 </div>
+
+<script src="video.js"></script>

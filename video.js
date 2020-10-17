@@ -38,20 +38,21 @@ const guiState = {
 
 async function setupVideo() {
 	const video = document.getElementById('test_vid');
-  	video.width = videoWidth;
-  	video.height = videoHeight;
+  video.width = videoWidth;
+  video.height = videoHeight;
 
-  	return new Promise(
-  		(resolve) => {
-    		video.onloadedmetadata = () => {
-      			resolve(video);
-    		};
-  		});
+  return new Promise(
+		(resolve) => {
+  		video.onloadedmetadata = () => {
+    			resolve(video);
+  		};
+		});
 }
 
 async function loadVideo() {
   const video = await setupVideo();
   video.play();
+  console.log("playing video")
 
   return video;
 }
