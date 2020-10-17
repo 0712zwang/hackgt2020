@@ -2,12 +2,18 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
 
 <script>
-	function myFunction() {
-		document.getElementById("demo").innerHTML = "Hello World";
+	client_vid = null
+
+	function updateFile() {
+		client_vid = client_vid = document.getElementById("").value
+	}
+
+	function poseEstimate() {
+		document.getElementById("output_video").innerHTML = client_vid
 	}
 </script>
 
 <label for="client_vid">Select a video:</label>
-<input type="file" accept="video/*" id="client_vid" name="client_vid">
-<button type="button" onclick="myFunction()">Submit</button>
-<p id="demo"></p>
+<input type="file" accept="video/*" id="client_vid" name="client_vid" change="updateFile">
+<button type="button" onclick="poseEstimate()">Submit</button>
+<video id="output_video"></video>
