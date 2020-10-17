@@ -1,3 +1,5 @@
+import {bindPage} from './video'
+
 client_vid = null
 
 function updateFile() {
@@ -5,19 +7,5 @@ function updateFile() {
 }
 
 function poseEstimate() {
-	var flipHorizontal = false;
-
-	var imageElement = document.getElementById('test_image');
-
-	posenet.load().then(
-		function(net) {
-  			const pose = net.estimateSinglePose(
-  				imageElement, {
-    				flipHorizontal: true
-  				});
-  			return pose;
-		}).then(function(pose){
-  			console.log(pose);
-		}
-	)
+  	bindPage()
 }
