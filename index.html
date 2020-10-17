@@ -1,6 +1,13 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
 
+<script>
+	function myFunction() {
+		document.getElementById("demo").innerHTML = "Hello World";
+	}
+</script>
+
 <label for="client_vid">Select a video:</label>
-<input type="file" id="client_vid" name="client_vid">
-<button type="button">Submit</button>
+<input type="file" accept="video/*" id="client_vid" name="client_vid">
+<button type="button" onclick="myFunction()">Submit</button>
+<p id="demo"></p>
