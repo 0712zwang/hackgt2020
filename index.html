@@ -13,7 +13,32 @@
 	}
 </script>
 
-<label for="client_vid">Select a video:</label>
-<input type="file" accept="video/*" id="client_vid" name="client_vid" change="updateFile">
-<button type="button" onclick="poseEstimate()">Submit</button>
+<form>
+	<label for="client_vid">Select a video:</label>
+	<input type="file" accept="video/*" id="client_vid" name="client_vid" change="updateFile">
+	<button type="button" onclick="poseEstimate()">Submit</button>
+</form>
+
+<body>
+    <img id='person' src='/images/person.jpg '/>
+</body>
+<!-- Place your code in the script tag below. You can also use an external .js file -->
+<script>
+	var flipHorizontal = false;
+
+	var imageElement = document.getElementById('person');
+
+	posenet.load().then(
+		function(net) {
+  			const pose = net.estimateSinglePose(
+  				imageElement, {
+    				flipHorizontal: true
+  				});
+  			return pose;
+		}).then(function(pose){
+  			console.log(pose);
+		})
+</script>
+
+
 <video id="output_video"></video>
