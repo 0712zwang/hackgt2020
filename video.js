@@ -139,35 +139,6 @@ export async function bindPage() {
   }
 
   console.log("detect pose in real time complete")
-
-  var imageElement = document.getElementById('test_vid');
-
-  let poses = []
-  posenet.load().then(function(net) {
-    const pose = net.estimateSinglePose(imageElement, {
-      flipHorizontal: false
-    });
-    return pose;
-  }).then(function(pose){
-    poses.push(pose)
-
-    console.log(pose);
-  })
-
-  poses.forEach(({score, keypoints}) => {
-      console.log("drawing", score, keypoints)
-      if (score >= minPoseConfidence) {
-        if (guiState.output.showPoints) {
-          drawKeypoints(keypoints, minPartConfidence, ctx);
-        }
-        if (guiState.output.showSkeleton) {
-          drawSkeleton(keypoints, minPartConfidence, ctx);
-        }
-        if (guiState.output.showBoundingBox) {
-          drawBoundingBox(keypoints, ctx);
-        }
-      }
-    });  
 }
 
 bindPage()
