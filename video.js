@@ -58,7 +58,6 @@ async function loadVideo() {
 }
 
 function detectPoseInRealTime(video, net) {
-  console.log("detecting pose")
   const canvas = document.getElementById('output_1');
   const ctx = canvas.getContext('2d');
 
@@ -79,6 +78,7 @@ function detectPoseInRealTime(video, net) {
       flipHorizontal: flipPoseHorizontal,
       decodingMethod: 'single-person'
     });
+    console.log(pose)
     poses = poses.concat(pose);
     minPoseConfidence = +guiState.singlePoseDetection.minPoseConfidence;
     minPartConfidence = +guiState.singlePoseDetection.minPartConfidence;
@@ -148,7 +148,7 @@ export async function bindPage() {
     return pose;
   }).then(function(pose){
     poses.push(pose)
-
+    
     console.log(pose);
   })
 
