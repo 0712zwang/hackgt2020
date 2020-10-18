@@ -136,6 +136,8 @@ export async function bindPage() {
     detectPoseInRealTime(video, guiState.net);
   }
 
+  console.log("detect pose in real time complete")
+
   var imageElement = document.getElementById('test_vid');
 
   let poses = []
