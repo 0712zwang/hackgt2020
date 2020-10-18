@@ -125,7 +125,7 @@ export async function bindPage() {
 
   let video;
 
-  for (var i=0; i < 1; i++) {
+  for (var i=0; i < 5; i++) {
 
     try {
       video = await loadVideo();
