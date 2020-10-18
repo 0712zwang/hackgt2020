@@ -132,7 +132,9 @@ export async function bindPage() {
     console.log('this browser does not support video capture, or this device does not have a camera')
   }
   console.log(video)
-  detectPoseInRealTime(video, guiState.net);
+  while(true) {
+    detectPoseInRealTime(video, guiState.net);
+  }
 
   var imageElement = document.getElementById('test_vid');
 
